@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Prévisionnel</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="page-header">
+        <p class="subtitle" id="month-label"></p>
+        </header>
+
+    <section class="balance-card" aria-labelledby="balance-title">
+      <label for="current-balance" id="balance-title">Saisis le solde actuel de ton compte :</label>
+      <div class="amount-input-wrap">
+        <input
+          id="current-balance"
+          type="number"
+          inputmode="decimal"
+          min="0"
+          step="0.01"
+          placeholder="Ex : 300"
+          aria-describedby="balance-help"
+        >
+        <span>€</span>
+      </div>
+      <p class="help-text" id="balance-help">Saisis ton solde actuel. Le résultat se met à jour automatiquement.</p>
+
+      <div class="result" aria-live="polite">
+        <p class="result-label">ARGENT RESTANT À LA FIN DU MOIS</p>
+        <p class="result-value" id="month-end-balance">—</p>
+        <p class="result-detail" id="result-detail">Entre ton solde pour afficher le résultat.</p>
+      </div>
+    </section>
+
+    <section class="columns" aria-label="Détail des dépenses du mois">
+      <article class="expense-panel paid-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker">DÉPENSES PASSÉES</p>
+            <h2>Déjà payé</h2>
+          </div>
+          <p class="panel-total" id="paid-total">0,00 €</p>
+        </div>
+        <ul class="expense-list" id="paid-list"></ul>
+        <p class="empty-state" id="paid-empty">Aucune dépense déjà payée ce mois-ci.</p>
+      </article>
+
+      <article class="expense-panel due-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="panel-kicker">DÉPENSES À VENIR</p>
+            <h2>Reste à payer</h2>
+          </div>
+          <p class="panel-total" id="due-total">0,00 €</p>
+        </div>
+        <ul class="expense-list" id="due-list"></ul>
+        <p class="empty-state" id="due-empty">Aucune dépense restante ce mois-ci.</p>
+      </article>
+    </section>
+
+    <footer class="footer-note">
+      Fait par Mimi
+    </footer>
+  </main>
+</body>
+</html>
